@@ -5,7 +5,7 @@ public delegate void TurnEnded(TurnInfo tI);
 
 public class StateManager : MonoBehaviour
 {
-	public event TurnEnded enemyTurnEnded;
+/*	public event TurnEnded enemyTurnEnded;
     public event TurnEnded playerTurnEnded;
 	
 	void Start()
@@ -97,7 +97,7 @@ public class StateManager : MonoBehaviour
 			
 			yield return null;
 		}
-	}
+	}*/
 }
 
 public struct TurnInfo
