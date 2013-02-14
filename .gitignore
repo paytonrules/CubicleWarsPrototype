@@ -35,3 +35,7 @@ NetworkManager.asset
 ScriptMapper
 
 .DS_Store
+*.swp
+Assets/CubicleWarsLibrary/bin
+test-results
+Assets/CubicleWarsLibrary/test-results
