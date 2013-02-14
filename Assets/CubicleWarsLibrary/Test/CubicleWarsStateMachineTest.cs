@@ -124,7 +124,6 @@ namespace CubicleWarsLibrary
 
 			unit.DidNotReceive().AttackWith(enemyUnit);
 		}
-
 		// Implementing these objects
 		// See attacks in game
 		// Enemies can die
