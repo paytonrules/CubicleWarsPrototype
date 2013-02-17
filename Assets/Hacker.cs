@@ -1,18 +1,24 @@
 using UnityEngine;
 using System.Collections;
+using CubicleWarsLibrary;
 
-public class Hacker : MonoBehaviour {
+public class Hacker : MonoBehaviour, UnityObject, Unit {
+	HackerUnit unit;
 
-	// Use this for initialization
 	void Start() {
-	
+		unit = new HackerUnit(this);
 	}
 	
 	void OnMouseDown() {
-		SelectionManager.Select(gameObject);
+		StateMachineLoader.stateMachine.Attack(this);
+	}
+
+	public void Attacked() 
+	{
+		Debug.Log("ATTACKED");
 	}
 	
-	void Update() {
-		Debug.Log("IS Selected: " + SelectionManager.HasSelection());
+	public void AttackWith(Unit enemy) {
+		unit.AttackWith(enemy);
 	}
 }

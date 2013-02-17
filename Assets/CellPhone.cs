@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using CubicleWarsLibrary;
 
-public class CellPhone : MonoBehaviour {
+public class CellPhone : MonoBehaviour, Unit {
+	CellPhoneUnit unit;
 
 	// Use this for initialization
 	void Start () {
-	
+		unit = new CellPhoneUnit();
 	}
 	
 	// Update is called once per frame
@@ -14,10 +16,10 @@ public class CellPhone : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
-		if (SelectionManager.HasSelection()) {
-			Debug.Log("You've been attacked");
-		} else {
-			Debug.Log ("You have not been attacked");
-		}
-	}		
+		StateMachineLoader.stateMachine.SelectObject(this);
+	}
+	
+	public void AttackWith(Unit enemy) {
+		unit.AttackWith(enemy);
+	}
 }
